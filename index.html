@@ -1,245 +1,375 @@
 
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080812">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090811">
 <title>USELESS™ — Nothing, Perfected.</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
-
-:root{--bg:#080812;--panel:#111120;--line:#292941;--muted:#9292ae;--purple:#9d7bff;--cyan:#66f0ed}
+:root{--bg:#090811;--panel:#121120;--line:#ffffff15;--purple:#a78bfa;--cyan:#67e8f9;--muted:#9997b4;--green:#86efac;--red:#fda4af}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:#f6f5ff;font-family:Inter,"Noto Sans TC",sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 15% 5%,#43208035,transparent 38%),radial-gradient(ellipse at 90% 35%,#075d7130,transparent 36%)}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:1px solid #ffffff12;backdrop-filter:blur(20px);position:sticky;top:0;background:#080812c9;z-index:10}
-.logo{font-size:19px;font-weight:900;letter-spacing:2px}.logo span{color:var(--purple)}
-.status{font-size:11px;color:#8dffcf;letter-spacing:1px;display:flex;align-items:center;gap:8px}
-.dot{width:7px;height:7px;background:#7cffb4;border-radius:50%;box-shadow:0 0 12px #7cffb4}
-main{max-width:1120px;margin:auto;padding:70px 24px}
-.hero{text-align:center;padding:45px 0 65px}
-.eyebrow{font-size:11px;letter-spacing:4px;color:var(--cyan);text-transform:uppercase}
-h1{font-size:clamp(46px,9vw,100px);line-height:1.03;letter-spacing:-5px;margin:24px 0;background:linear-gradient(110deg,#fff 15%,#b6a0ff 48%,#6df4ee 90%);background-clip:text;color:transparent}
-.hero p{color:var(--muted);line-height:1.9;font-size:15px}
-.btn{border:1px solid #ffffff24;background:#ffffff08;color:white;padding:13px 19px;border-radius:12px;cursor:pointer;font:inherit;font-size:13px;transition:.25s}
-.btn:hover{transform:translateY(-3px);border-color:var(--purple);box-shadow:0 8px 30px #9974ff24}
-.primary{background:linear-gradient(120deg,#8660ee,#5d9fe9);border:0;font-weight:700}
-.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
-.section-label{font-size:11px;letter-spacing:3px;color:var(--muted);margin-bottom:17px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
-.card{background:linear-gradient(145deg,#17172a,#0e0e1a);border:1px solid var(--line);border-radius:20px;padding:23px;position:relative;overflow:hidden}
-.card:after{content:"";position:absolute;width:120px;height:120px;right:-65px;top:-65px;border-radius:50%;background:#9d7bff12;filter:blur(5px)}
-.icon{font-size:24px;margin-bottom:25px}
-.card h3{font-size:14px;margin:0 0 10px}
-.card p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}
-.metric{font-size:30px;font-weight:800;letter-spacing:-1px;margin:17px 0 7px}
-.metric small{font-size:12px;color:var(--cyan);letter-spacing:0}
-.meter{height:4px;background:#28283d;border-radius:10px;margin-top:20px;overflow:hidden}
-.meter div{height:100%;width:var(--w);background:linear-gradient(90deg,var(--purple),var(--cyan));border-radius:10px;transition:width .6s}
-.wide{grid-column:span 2}
-.orbit-wrap{height:190px;display:grid;place-items:center;position:relative}
-.orbit{width:130px;height:130px;border:1px solid #9d7bff65;border-radius:50%;position:relative;animation:spin 12s linear infinite}
-.orbit:before{content:"";position:absolute;inset:22px;border:1px solid #66f0ed70;border-radius:50%}
-.planet{position:absolute;top:-5px;left:55px;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 20px var(--cyan)}
-.core{position:absolute;inset:48px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#d9caff,#855cff 55%,#30205c);box-shadow:0 0 45px #9d7bff70}
+body{margin:0;background:var(--bg);color:#f8f7ff;font-family:Inter,"Noto Sans TC",sans-serif}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 15% 0%,#6738a52a,transparent 40%),radial-gradient(ellipse at 95% 45%,#087e9b1b,transparent 35%)}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+nav{height:72px;position:sticky;top:0;z-index:10;background:#090811dc;backdrop-filter:blur(18px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%}
+.logo{font-weight:900;letter-spacing:2px;font-size:18px}.logo b{color:var(--purple)}
+.pill{font-size:10px;letter-spacing:1px;color:var(--green);border:1px solid #86efac35;border-radius:30px;padding:8px 11px}
+.layout{max-width:1250px;margin:auto;padding:28px 22px 70px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:25px}
+aside{position:sticky;top:96px;height:max-content;border:1px solid var(--line);background:#ffffff04;border-radius:18px;padding:15px}
+.nav-label,.label{font-size:10px;letter-spacing:2px;color:var(--muted);margin:8px 0 15px}
+.navbtn{display:flex;gap:11px;align-items:center;width:100%;text-align:left;color:#aaa8c2;background:transparent;border:1px solid transparent;padding:13px 12px;border-radius:11px;margin:4px 0;font-size:12px}
+.navbtn:hover,.navbtn.active{background:#a78bfa16;color:white;border-color:#a78bfa35}
+.navbtn span{font-size:17px;width:22px}
+.aside-foot{margin-top:22px;padding:13px;border-top:1px solid var(--line);font-size:10px;line-height:1.9;color:#77758e}
+main{min-width:0}
+.page{display:none;animation:appear .3s ease}.page.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.hero{padding:26px 0 30px}
+.eyebrow{color:var(--cyan);font-size:10px;letter-spacing:3px}
+h1{font-size:clamp(38px,6vw,68px);letter-spacing:-3px;line-height:1.05;margin:17px 0;background:linear-gradient(110deg,#fff,#b8a5ff 55%,#67e8f9);background-clip:text;color:transparent}
+h2{font-size:24px;letter-spacing:-.7px;margin:0 0 9px}
+h3{font-size:13px;margin:0 0 9px}
+p{font-size:12px;line-height:1.9;color:var(--muted)}
+.hero p{max-width:540px;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{min-width:0;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#19172aee,#10101bf2);padding:19px;box-shadow:0 12px 40px #0000000a}
+.card.wide{grid-column:span 2}
+.card.full{grid-column:1/-1}
+.stat{font-size:clamp(22px,3vw,31px);font-weight:800;letter-spacing:-1px;margin:14px 0 7px;overflow-wrap:anywhere}
+.stat small{font-size:11px;color:var(--cyan);letter-spacing:0}
+.muted{color:var(--muted)}
+.tiny{font-size:10px;color:var(--muted);line-height:1.8}
+.btn{border:1px solid #ffffff20;border-radius:10px;background:#ffffff08;color:#f8f7ff;padding:11px 14px;font-size:11px;transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--purple);box-shadow:0 5px 20px #a78bfa20}
+.btn.primary{background:linear-gradient(110deg,#8058dd,#526ce0);border:0;font-weight:700}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+.meter{height:4px;background:#ffffff10;border-radius:5px;overflow:hidden;margin-top:16px}
+.meter div{height:100%;background:linear-gradient(90deg,var(--purple),var(--cyan));transition:width .4s}
+.orbitbox{height:185px;display:grid;place-items:center}
+.orbit{width:135px;height:135px;border:1px solid #a78bfa80;border-radius:50%;position:relative;animation:spin 12s linear infinite}
+.orbit:before{content:"";position:absolute;inset:22px;border:1px solid #67e8f960;border-radius:50%}
+.planet{position:absolute;left:57px;top:-5px;width:12px;height:12px;background:var(--cyan);border-radius:50%;box-shadow:0 0 20px var(--cyan)}
+.core{position:absolute;inset:47px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#e9ddff,#9264f8 50%,#392263);box-shadow:0 0 45px #a78bfa80}
 @keyframes spin{to{transform:rotate(360deg)}}
-.console{background:#08080f;border:1px solid var(--line);border-radius:12px;padding:16px;font:12px/2 monospace;color:#a5a5c0;min-height:135px;overflow:hidden}
-.console .green{color:#83f5c1}.console .violet{color:#c2a9ff}
-.actions-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
-.full{margin-top:55px}
-.big-number{font-size:clamp(45px,7vw,76px);font-weight:900;letter-spacing:-4px;background:linear-gradient(90deg,#fff,#a394ff);background-clip:text;color:transparent}
-footer{text-align:center;padding:35px 20px 50px;color:#66667f;font-size:11px;line-height:2;border-top:1px solid #ffffff10}
-.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,20px);opacity:0;background:#202039;border:1px solid #7770a0;padding:13px 20px;border-radius:13px;font-size:13px;transition:.3s;z-index:30;pointer-events:none;max-width:90%;text-align:center}
+.console{font:11px/2 monospace;background:#08080f;border:1px solid var(--line);padding:13px;border-radius:10px;min-height:110px;overflow-wrap:anywhere}
+.green{color:var(--green)}.purple{color:var(--purple)}.cyan{color:var(--cyan)}.red{color:var(--red)}
+.field{width:100%;padding:12px 13px;background:#090812;border:1px solid var(--line);border-radius:10px;color:white;outline:none;font-size:12px}
+.field:focus{border-color:var(--purple)}
+select.field option{background:#111}
+textarea.field{resize:vertical;min-height:85px}
+.chart{width:100%;height:180px;display:block}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:11px;white-space:nowrap}
+th,td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:500}
+td{color:#e8e5fa}
+.stockname{display:flex;align-items:center;gap:9px}
+.coin{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:#a78bfa18;color:var(--purple);font-weight:800}
+.badge{font-size:9px;border-radius:20px;padding:5px 7px;background:#86efac14;color:var(--green)}
+.badge.loss{background:#fda4af14;color:var(--red)}
+.console-line{border-bottom:1px solid #ffffff0a;padding:5px 0}
+.rankrow{display:grid;grid-template-columns:35px 1fr auto;align-items:center;gap:12px;padding:15px 0;border-bottom:1px solid var(--line)}
+.rankno{font-size:20px;font-weight:900;color:var(--purple)}
+.ranktext{font-size:12px;line-height:1.8;overflow-wrap:anywhere}
+.score{font-size:12px;color:var(--cyan);white-space:nowrap}
+footer{text-align:center;padding:25px;color:#77758e;font-size:10px;line-height:2;border-top:1px solid var(--line)}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,15px);opacity:0;transition:.25s;z-index:30;background:#211d36;border:1px solid #a78bfa65;padding:12px 18px;border-radius:12px;font-size:11px;max-width:90%;text-align:center;pointer-events:none}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-#confetti{position:fixed;inset:0;pointer-events:none;z-index:20}
-@media(max-width:700px){main{padding:40px 17px}.grid{grid-template-columns:1fr 1fr}.wide{grid-column:span 2}h1{letter-spacing:-3px}.card{padding:17px}.hero{padding:30px 0 45px}nav{padding:0 18px}.hide-mobile{display:none}}
-@media(max-width:390px){.grid{grid-template-columns:1fr}.wide{grid-column:span 1}}
+@media(max-width:760px){.layout{grid-template-columns:1fr;padding:15px 13px 45px;gap:16px}aside{position:static;display:flex;gap:5px;overflow-x:auto;padding:8px}.nav-label,.aside-foot{display:none}.navbtn{white-space:nowrap;width:auto;flex:0 0 auto;padding:11px;font-size:10px}.navbtn span{width:auto}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:14px}.card.wide{grid-column:span 2}nav{padding:0 16px}.hero{padding-top:20px}}
+@media(max-width:390px){.grid,.grid.two{grid-template-columns:1fr}.card.wide,.card.full{grid-column:span 1}.rankrow{grid-template-columns:27px 1fr auto}}
 </style>
 </head>
 <body>
 <nav>
-  <div class="logo">USELESS<span>™</span></div>
-  <div class="status"><span class="dot"></span> EVERYTHING IS POINTLESS</div>
+  <div class="logo">USELESS<b>™</b></div>
+  <div class="pill">● NOTHING SYSTEMS ONLINE</div>
 </nav>
 
+<div class="layout">
+<aside>
+  <div class="nav-label">MAIN TERMINAL</div>
+  <button class="navbtn active" data-page="home"><span>◈</span> 總覽 Overview</button>
+  <button class="navbtn" data-page="exchange"><span>↗</span> 無用交易所</button>
+  <button class="navbtn" data-page="lab"><span>✳</span> 虛構 AI 實驗室</button>
+  <button class="navbtn" data-page="ranking"><span>☷</span> 宇宙廢話榜</button>
+  <div class="aside-foot">USELESS™ OS v3.0<br>所有指標均為虛構模擬。<br>NO PURPOSE. NO PROBLEM.</div>
+</aside>
+
 <main>
-  <section class="hero">
-    <div class="eyebrow">The World's Leading Nothing Platform</div>
+<!-- OVERVIEW -->
+<section class="page active" id="home">
+  <div class="hero">
+    <div class="eyebrow">THE WORLD'S LEADING NOTHING PLATFORM</div>
     <h1>Nothing,<br>Perfected.</h1>
-    <p>我們重新定義了「什麼都沒做」的可能性。<br>
-    透過尖端的無用科技，讓每一次點擊都毫無意義。</p>
+    <p>以頂尖科技重新定義毫無意義。探索虛構市場、無用 AI 與宇宙級廢話。每一次操作，都讓世界保持原樣。</p>
     <div class="actions">
-      <button class="btn primary" onclick="launch()">啟動毫無意義模式 ↗</button>
-      <button class="btn" onclick="meaningless()">了解我們的意義</button>
+      <button class="btn primary" onclick="launch()">啟動無用模式 ↗</button>
+      <button class="btn" onclick="go('lab')">進入虛構實驗室</button>
     </div>
-  </section>
-
-  <div class="section-label">01 / THE NOTHING ANALYTICS</div>
-  <section class="grid">
-    <article class="card">
-      <div class="icon">◈</div><h3>宇宙級無用指數</h3>
-      <div class="metric" id="useless">99.97<small>%</small></div>
-      <p>無用程度已超越人類理解範圍。</p>
-      <div class="meter"><div style="--w:99.97%"></div></div>
-    </article>
-    <article class="card">
-      <div class="icon">⌁</div><h3>已浪費的時間</h3>
-      <div class="metric" id="time">00:00:00</div>
-      <p>從你進入本網站的那一刻開始。</p>
-      <div class="meter"><div id="timebar" style="--w:12%"></div></div>
-    </article>
-    <article class="card">
-      <div class="icon">◎</div><h3>虛構 AI 運算力</h3>
-      <div class="metric" id="compute">0.00<small> ZF</small></div>
-      <p>ZF = Zetta-Futility，虛構單位。</p>
-      <div class="meter"><div id="computeBar" style="--w:42%"></div></div>
-    </article>
-
+  </div>
+  <div class="label">01 / NOTHING ANALYTICS</div>
+  <div class="grid">
+    <article class="card"><div class="tiny">GLOBAL USELESSNESS INDEX</div><div class="stat" id="useless">99.97<small>%</small></div><p>宇宙級無用指數</p><div class="meter"><div style="width:99.97%"></div></div></article>
+    <article class="card"><div class="tiny">TIME INVESTED</div><div class="stat" id="timer">00:00:00</div><p>你在這裡度過的時間</p><div class="meter"><div id="timebar" style="width:2%"></div></div></article>
+    <article class="card"><div class="tiny">VIRTUAL COMPUTE</div><div class="stat" id="compute">0.00<small> ZF</small></div><p>虛構運算力單位</p><div class="meter"><div id="computebar" style="width:42%"></div></div></article>
     <article class="card wide">
-      <div class="section-label">02 / QUANTUM NOTHINGNESS</div>
-      <div class="orbit-wrap"><div class="orbit"><div class="planet"></div><div class="core"></div></div></div>
-      <h3>量子虛無核心</h3>
-      <p>正在以最高規格模擬不存在的事物。動畫看起來很厲害，實際上只是 CSS。</p>
+      <div class="row"><div><div class="tiny">QUANTUM NOTHINGNESS</div><h3>量子虛無核心</h3></div><span class="badge">SIMULATED</span></div>
+      <div class="orbitbox"><div class="orbit"><div class="planet"></div><div class="core"></div></div></div>
+      <p>正在模擬不存在的事物。視覺效果很先進，實際上只是 CSS 動畫。</p>
     </article>
     <article class="card">
-      <div class="section-label">03 / SYSTEM STATUS</div>
-      <div class="console" id="console">
-        <div class="green">● SYSTEM ONLINE</div>
-        <div>> Initializing nothing...</div>
-        <div>> Loading absolutely nothing...</div>
-        <div class="violet">> Everything is meaningless.</div>
-      </div>
-      <div class="actions-row">
-        <button class="btn" onclick="runScan()">執行無用掃描</button>
-      </div>
+      <div class="tiny">SYSTEM DIAGNOSTICS</div><h3 style="margin-top:12px">無用系統診斷</h3>
+      <div class="console" id="syslog"><div class="green">● SYSTEM ONLINE</div><div>> Loading nothing...</div><div>> Checking usefulness...</div><div class="purple">> Result: 0 useful things.</div></div>
+      <div class="actions"><button class="btn" onclick="scan()">執行掃描</button></div>
     </article>
-  </section>
+  </div>
+</section>
 
-  <section class="full">
-    <div class="section-label">04 / ARTIFICIAL POINTLESSNESS</div>
-    <div class="card">
-      <h3>高級廢話生成器</h3>
-      <p>運用不存在的深度學習技術，生成毫無實際用途的宇宙級結論。</p>
-      <div class="console" id="report" style="margin-top:18px">
-        <span class="violet">[等待指令]</span> 尚未產生任何有用資訊。
-      </div>
-      <div class="actions-row">
-        <button class="btn primary" onclick="generate()">生成高級廢話 ✦</button>
-        <button class="btn" onclick="copyReport()">複製這份廢話</button>
-      </div>
-    </div>
-  </section>
+<!-- EXCHANGE -->
+<section class="page" id="exchange">
+  <div class="hero">
+    <div class="eyebrow">02 / VOID EXCHANGE</div>
+    <h1>Trade<br>Absolutely Nothing.</h1>
+    <p>全球首個毫無價值的虛構交易市場。使用虛擬資金交易不存在的資產，所有價格均為隨機模擬。</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="tiny">VIRTUAL PORTFOLIO</div><div class="stat" id="cash">$10,000.00</div><p>虛擬現金餘額</p></article>
+    <article class="card"><div class="tiny">PORTFOLIO VALUE</div><div class="stat" id="portfolio">$10,000.00</div><p>現金與模擬持倉總值</p></article>
+    <article class="card"><div class="tiny">TOTAL P&L</div><div class="stat" id="pnl">$0.00</div><p>模擬損益，沒有真實金錢</p></article>
+    <article class="card full">
+      <div class="row"><div><div class="tiny">LIVE SIMULATED MARKET</div><h3>虛構市場行情</h3></div><span class="badge">● SIMULATION</span></div>
+      <div class="tablewrap"><table><thead><tr><th>資產</th><th>價格</th><th>變化</th><th>持有</th><th>操作</th></tr></thead><tbody id="stocks"></tbody></table></div>
+      <p class="tiny">價格定時隨機波動。買賣只改變本機頁面中的模擬資產，重新整理會重置。</p>
+    </article>
+    <article class="card full">
+      <div class="row"><div><div class="tiny">MARKET TELEMETRY</div><h3>虛構市場走勢</h3></div><span class="tiny" id="marketStatus">MARKET OPEN</span></div>
+      <canvas class="chart" id="chart"></canvas>
+    </article>
+  </div>
+</section>
 
-  <section class="full" style="text-align:center">
-    <div class="section-label">05 / THE FINAL QUESTION</div>
-    <div class="big-number" id="final">0</div>
-    <p style="color:var(--muted);font-size:13px">你今天在這裡做了多少件有意義的事？</p>
-    <button class="btn" onclick="resetAll()">重置一切（什麼都不會改變）</button>
-  </section>
+<!-- AI LAB -->
+<section class="page" id="lab">
+  <div class="hero">
+    <div class="eyebrow">03 / NOTHING AI LAB</div>
+    <h1>Artificial<br>Pointlessness.</h1>
+    <p>進入宇宙級研究中心。輸入一個主題，我們的本機廢話引擎將產生聽起來極為專業、實際上毫無用途的研究報告。</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="tiny">NEURAL NONSENSE</div><div class="stat" id="neurons">0</div><p>虛構神經元已啟動</p></article>
+    <article class="card"><div class="tiny">RESEARCH PROGRESS</div><div class="stat" id="progress">0<small>%</small></div><p>虛構研究進度</p><div class="meter"><div id="progressbar" style="width:0%"></div></div></article>
+    <article class="card"><div class="tiny">SCIENTIFIC VALUE</div><div class="stat">0.00<small>%</small></div><p>永遠保持穩定的科學價值</p></article>
+    <article class="card full">
+      <div class="tiny">RESEARCH PARAMETERS</div><h3 style="margin-top:10px">設定你的無用研究</h3>
+      <p>研究主題</p><input class="field" id="topic" maxlength="100" placeholder="例如：為什麼襪子總是少一隻？">
+      <p>研究模式</p><select class="field" id="mode"><option value="quantum">量子虛無理論</option><option value="cosmic">宇宙廢話學</option><option value="finance">無用經濟學</option><option value="future">未來的過去研究所</option></select>
+      <div class="actions"><button class="btn primary" id="researchBtn" onclick="research()">啟動研究程序 ✳</button><button class="btn" onclick="clearResearch()">清除結果</button></div>
+    </article>
+    <article class="card full"><div class="row"><h3>RESEARCH OUTPUT / 研究結果</h3><span class="badge">NOT PEER REVIEWED</span></div><div class="console" id="researchOutput"><span class="purple">[等待輸入]</span><br>研究尚未開始。請提交一個毫無意義的研究主題。</div><div class="actions"><button class="btn" onclick="copyText('researchOutput')">複製研究報告</button></div></article>
+  </div>
+</section>
+
+<!-- RANKING -->
+<section class="page" id="ranking">
+  <div class="hero">
+    <div class="eyebrow">04 / COSMIC NONSENSE LEADERBOARD</div>
+    <h1>The Art of<br>Saying Nothing.</h1>
+    <p>宇宙最盛大的廢話競賽。提交你的句子，獲得虛構分數，並與其他毫無意義的言論一較高下。</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="tiny">NONSENSE ENTRIES</div><div class="stat" id="entryCount">7</div><p>排行榜句子總數</p></article>
+    <article class="card"><div class="tiny">AVERAGE USELESSNESS</div><div class="stat">99.99<small>%</small></div><p>虛構平均無用程度</p></article>
+    <article class="card"><div class="tiny">COSMIC RANK</div><div class="stat">#0</div><p>第零名，不存在的榮耀</p></article>
+    <article class="card full">
+      <div class="tiny">SUBMIT YOUR NONSENSE</div><h3 style="margin-top:10px">提交一段宇宙級廢話</h3>
+      <textarea class="field" id="newJoke" maxlength="180" placeholder="例如：當時間忘記了自己，時鐘便成為了圓形的昨天。"></textarea>
+      <div class="row" style="margin-top:12px"><span class="tiny">最多 180 字。分數完全隨機。</span><button class="btn primary" onclick="submitJoke()">提交排行榜 ↗</button></div>
+    </article>
+    <article class="card full">
+      <div class="row"><div><div class="tiny">GLOBAL NONSENSE INDEX</div><h3>宇宙廢話排行榜</h3></div><button class="btn" onclick="sortRanking()">重新排序 ↕</button></div>
+      <div id="rankingList"></div>
+      <p class="tiny">排行榜只存在於目前頁面工作階段，不會上傳至伺服器。</p>
+    </article>
+    <article class="card full">
+      <div class="tiny">INSTANT NONSENSE GENERATOR</div><h3 style="margin-top:10px">立即生成一句廢話</h3>
+      <div class="console" id="instantJoke">請點擊下方按鈕，探索無用的真諦。</div>
+      <div class="actions"><button class="btn primary" onclick="instantJoke()">生成一句 ✦</button><button class="btn" onclick="copyText('instantJoke')">複製句子</button></div>
+    </article>
+  </div>
+</section>
 </main>
-
-<footer>
-  USELESS™ TECHNOLOGIES INTERNATIONAL<br>
-  Making Nothing Since Absolutely Never.<br>
-  所有數據均為虛構。所有功能均不提供實際效益。<br>
-  © 2026 USELESS™ — A beautifully pointless experience.
-</footer>
-
-<canvas id="confetti"></canvas>
+</div>
+<footer>USELESS™ TECHNOLOGIES INTERNATIONAL<br>Making Nothing Since Absolutely Never.<br>所有行情、指標、AI 報告與評分均為虛構模擬。<br>© 2026 USELESS™ — NO PURPOSE. NO PROBLEM.</footer>
 <div class="toast" id="toast"></div>
 
 <script>
-const $ = id => document.getElementById(id);
-let seconds = 0, actions = 0, toastTimer;
-
-setInterval(() => {
-  seconds++;
-  const h = String(Math.floor(seconds / 3600)).padStart(2,'0');
-  const m = String(Math.floor(seconds % 3600 / 60)).padStart(2,'0');
-  const s = String(seconds % 60).padStart(2,'0');
-  $('time').textContent = `${h}:${m}:${s}`;
-  $('timebar').style.setProperty('--w', `${Math.min(100,seconds/3)}%`);
-  $('compute').innerHTML = (Math.random()*9.99).toFixed(2)+'<small> ZF</small>';
-  $('computeBar').style.setProperty('--w',Math.random()*100+'%');
-  $('final').textContent = actions;
+const $=id=>document.getElementById(id);
+let seconds=0,actions=0,toastTimer;
+function toast(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2400)}
+function go(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));
+ document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+function launch(){actions++;$('useless').innerHTML=(99.9+Math.random()*.1).toFixed(2)+'<small>%</small>';toast('無用模式已啟動。世界毫無變化。')}
+function scan(){
+ actions++;
+ $('syslog').innerHTML='<div class="green">● SCAN COMPLETE</div><div class="console-line">> Objects scanned: '+Math.floor(Math.random()*9999)+'</div><div class="console-line">> Useful objects found: 0</div><div class="purple">> Conclusion: Nothing changed.</div>';
+ toast('掃描完成：沒有任何值得報告的發現。');
+}
+setInterval(()=>{
+ seconds++;
+ $('timer').textContent=[Math.floor(seconds/3600),Math.floor(seconds/60)%60,seconds%60].map(n=>String(n).padStart(2,'0')).join(':');
+ $('timebar').style.width=Math.min(100,seconds/3)+'%';
+ $('compute').innerHTML=(Math.random()*9.99).toFixed(2)+'<small> ZF</small>';
+ $('computebar').style.width=Math.random()*100+'%';
 },1000);
 
-function toast(msg){
-  $('toast').textContent=msg;
-  $('toast').classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2600);
-}
-function meaningless(){
-  actions++;
-  toast('我們的意義是：意義本身並沒有意義。');
-}
-function launch(){
-  actions++;
-  $('useless').innerHTML=(99.9+Math.random()*.1).toFixed(2)+'<small>%</small>';
-  toast('無用模式已啟動。世界沒有任何改變。');
-  confetti();
-}
-const lines=[
-  '經過深度分析，我們發現：一切正在成為一切。',
-  '根據不存在的數據，未來將繼續保持未來的樣子。',
-  '宇宙的終極答案是：請稍後再試。',
-  '在無限的可能性中，毫無意義是最穩定的狀態。',
-  '我們使用了 0 個神經網路，得出了 100% 沒用的結論。',
-  '突破性發現：沒有發現任何突破性發現。',
-  '經量子計算驗證，今天仍然是今天。'
+// FICTIONAL EXCHANGE
+const initialCash=10000;
+let cash=initialCash;
+const assets=[
+ {name:'VOID',symbol:'虛無科技',price:128.40,prev:128.40,units:0},
+ {name:'NULL',symbol:'空值能源',price:76.25,prev:76.25,units:0},
+ {name:'ZERO',symbol:'零點集團',price:204.80,prev:204.80,units:0},
+ {name:'404',symbol:'迷失資產',price:42.60,prev:42.60,units:0},
+ {name:'DUST',symbol:'宇宙塵埃',price:9.99,prev:9.99,units:0}
 ];
-function generate(){
-  actions++;
-  const msg=lines[Math.floor(Math.random()*lines.length)];
-  $('report').innerHTML='<span class="green">[分析完成]</span><br><br>'+msg+
-    '<br><br><span class="violet">Confidence: 0%　|　Usefulness: 0%</span>';
-  toast('報告已成功生成。其價值仍然為零。');
+function money(n){return '$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function renderStocks(){
+ $('stocks').innerHTML=assets.map((a,i)=>{
+ let change=(a.price-a.prev)/a.prev*100;
+ return `<tr><td><div class="stockname"><div class="coin">${a.name.slice(0,1)}</div><div><b>${a.name}</b><div class="tiny">${a.symbol}</div></div></div></td><td>${money(a.price)}</td><td><span class="badge ${change<0?'loss':''}">${change>=0?'+':''}${change.toFixed(2)}%</span></td><td>${a.units}</td><td><button class="btn" onclick="trade(${i},'buy')">買入</button> <button class="btn" onclick="trade(${i},'sell')" ${a.units<=0?'disabled':''}>賣出</button></td></tr>`;
+ }).join('');
+ updatePortfolio();
 }
-function copyReport(){
-  const text=$('report').innerText;
-  if(navigator.clipboard && location.protocol==='https:'){
-    navigator.clipboard.writeText(text).then(()=>toast('已複製這份毫無價值的報告。'))
-      .catch(()=>toast(text));
-  }else toast(text);
+function updatePortfolio(){
+ let value=assets.reduce((s,a)=>s+a.price*a.units,0);
+ $('cash').textContent=money(cash);
+ $('portfolio').textContent=money(cash+value);
+ $('pnl').textContent=money(cash+value-initialCash);
 }
-function runScan(){
-  actions++;
-  const c=$('console');
-  c.innerHTML='<div class="green">● SCAN COMPLETE</div>'+
-    '<div>> Scanning nothing... 100%</div>'+
-    '<div>> Useful objects found: 0</div>'+
-    '<div class="violet">> Congratulations. Nothing changed.</div>';
-  toast('掃描完成：沒有任何值得報告的發現。');
+function trade(i,side){
+ const a=assets[i],qty=1;
+ if(side==='buy'){
+  if(cash<a.price){toast('虛擬資金不足。你的財富也毫無意義。');return}
+  cash-=a.price;a.units+=qty;toast('已買入 1 單位虛構資產 '+a.name);
+ }else{
+  if(a.units<qty)return;
+  cash+=a.price;a.units-=qty;toast('已賣出 1 單位虛構資產 '+a.name);
+ }
+ actions++;renderStocks();drawChart();
 }
-function resetAll(){
-  actions=0;seconds=0;
-  $('final').textContent='0';
-  $('time').textContent='00:00:00';
-  $('report').textContent='一切已重置。這個操作毫無意義。';
-  toast('已重置。你剛剛浪費了時間來重置浪費時間的工具。');
+let history=Array.from({length:45},(_,i)=>100+Math.sin(i/4)*12+Math.random()*8);
+function drawChart(){
+ const c=$('chart'),r=c.getBoundingClientRect(),dpr=window.devicePixelRatio||1;
+ if(!r.width)return;
+ c.width=r.width*dpr;c.height=180*dpr;
+ const ctx=c.getContext('2d');ctx.scale(dpr,dpr);
+ const w=r.width,h=180,pad=10,min=Math.min(...history)-5,max=Math.max(...history)+5;
+ ctx.strokeStyle='#ffffff10';ctx.lineWidth=1;
+ for(let i=0;i<5;i++){let y=pad+i*(h-2*pad)/4;ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}
+ const pts=history.map((v,i)=>({x:i*w/(history.length-1),y:pad+(max-v)/(max-min)*(h-2*pad)}));
+ const grad=ctx.createLinearGradient(0,0,0,h);grad.addColorStop(0,'#a78bfa55');grad.addColorStop(1,'#a78bfa00');
+ ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.lineTo(w,h);ctx.lineTo(0,h);ctx.closePath();ctx.fillStyle=grad;ctx.fill();
+ ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.strokeStyle='#b5a0ff';ctx.lineWidth=2;ctx.stroke();
 }
-function confetti(){
-  const canvas=$('confetti'),ctx=canvas.getContext('2d');
-  canvas.width=innerWidth;canvas.height=innerHeight;
-  const particles=Array.from({length:100},()=>({
-    x:Math.random()*canvas.width,y:-20-Math.random()*canvas.height/2,
-    v:2+Math.random()*5,s:3+Math.random()*5,
-    c:['#9d7bff','#66f0ed','#ffffff','#ff8ce6'][Math.floor(Math.random()*4)]
-  }));
-  let frame=0;
-  function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(p=>{
-      p.y+=p.v;p.x+=Math.sin(p.y/30)*1.5;
-      ctx.fillStyle=p.c;ctx.fillRect(p.x,p.y,p.s,p.s);
-    });
-    if(++frame<100)requestAnimationFrame(draw);
-    else ctx.clearRect(0,0,canvas.width,canvas.height);
+function marketTick(){
+ assets.forEach(a=>{a.prev=a.price;a.price=Math.max(.5,a.price*(1+(Math.random()-.49)*.035))});
+ history.push(history[history.length-1]+(Math.random()-.48)*5);
+ if(history.length>65)history.shift();
+ renderStocks();drawChart();
+}
+renderStocks();
+window.addEventListener('resize',drawChart);
+setTimeout(drawChart,100);
+setInterval(marketTick,4000);
+
+// LOCAL NONSENSE GENERATOR — NOT AN ONLINE AI
+const phrases=[
+ '在無限的可能性中，毫無意義是最穩定的狀態。',
+ '經過深度分析，我們發現一切正在成為一切。',
+ '當宇宙停止思考，答案便開始問問題。',
+ '根據不存在的數據，未來將持續保持未來的樣子。',
+ '如果昨天是明天，那麼今天就是一個日期。',
+ '我們使用了零個神經網路，得出百分之百沒用的結論。',
+ '突破性發現：沒有發現任何突破性發現。',
+ '時間不會等待任何人，除了正在等待時間的人。',
+ '所有道路都通往某處，但某處不一定是目的地。',
+ '當空白填滿空白，空白便失去了空白的意義。'
+];
+const modes={
+ quantum:['量子虛無波函數','不存在的粒子場','超對稱空值模型'],
+ cosmic:['宇宙廢話學','星際空談理論','無限空白假說'],
+ finance:['零收益經濟模型','虛構資產流動性','無用市場均衡'],
+ future:['時間反向觀測','未來的過去研究','昨日明日悖論']
+};
+function research(){
+ const topic=$('topic').value.trim()||'宇宙為什麼如此沒有意義';
+ const mode=$('mode').value,btn=$('researchBtn');
+ btn.disabled=true;$('progress').innerHTML='0<small>%</small>';$('progressbar').style.width='0%';
+ $('neurons').textContent='0';
+ $('researchOutput').innerHTML='<span class="cyan">[INITIALIZING]</span><br>研究主題：'+escapeHTML(topic)+'<br>正在啟動本機廢話引擎……';
+ let progress=0;
+ const timer=setInterval(()=>{
+  progress+=20;
+  $('progress').innerHTML=progress+'<small>%</small>';$('progressbar').style.width=progress+'%';
+  $('neurons').textContent=(progress*1234).toLocaleString();
+  if(progress>=100){
+   clearInterval(timer);btn.disabled=false;actions++;
+   const phrase=phrases[Math.floor(Math.random()*phrases.length)];
+   const field=modes[mode][Math.floor(Math.random()*modes[mode].length)];
+   $('researchOutput').innerHTML='<span class="green">[SIMULATION COMPLETE]</span><br><br><b>研究主題：</b>'+escapeHTML(topic)+'<br><b>研究模型：</b>'+field+'<br><br><b>摘要</b><br>'+escapeHTML(phrase)+'針對「'+escapeHTML(topic)+'」的模擬分析顯示，該現象可能與不存在的因素具有高度相關性。<br><br><b>研究方法：</b>透過假設性觀察、虛構參數及不具實證效力的推論進行分析。<br><b>結果：</b>未獲得任何可驗證的發現。<br><b>信心指數：</b>0.00%<br><b>實際用途：</b>無。<br><br><span class="purple">DISCLAIMER: 本報告由本機預設文字組合生成，並非真正的 AI 分析或科學研究。</span>';
+   toast('研究完成。科學價值依然是零。');
   }
-  draw();
+ },180);
 }
+function clearResearch(){
+ $('researchOutput').textContent='研究尚未開始。請提交一個毫無意義的研究主題。';
+ $('progress').innerHTML='0<small>%</small>';$('progressbar').style.width='0%';$('neurons').textContent='0';
+}
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function copyText(id){
+ const text=$(id).innerText;
+ if(navigator.clipboard&&location.protocol==='https:')navigator.clipboard.writeText(text).then(()=>toast('已複製到剪貼簿。')).catch(()=>toast(text));
+ else toast(text);
+}
+
+// LEADERBOARD
+let jokes=[
+ {text:'宇宙的盡頭不是黑洞，而是還沒寫完的待辦清單。',score:99.98},
+ {text:'當時間忘記了自己，時鐘便成為圓形的昨天。',score:99.96},
+ {text:'水往低處流，因為它尚未訂閱高處服務。',score:99.94},
+ {text:'如果沉默會說話，那麼它大概也會保持沉默。',score:99.92},
+ {text:'我們不是迷失方向，只是方向尚未找到我們。',score:99.90},
+ {text:'一個人的速度取決於他是否正在等待。',score:99.87},
+ {text:'沒有消息就是好消息，除非你正在等消息。',score:99.82}
+];
+function renderRanking(){
+ $('entryCount').textContent=jokes.length;
+ $('rankingList').innerHTML=jokes.map((j,i)=>`<div class="rankrow"><div class="rankno">${String(i+1).padStart(2,'0')}</div><div class="ranktext">${escapeHTML(j.text)}<div class="tiny">COSMIC NONSENSE / ENTRY ${i+1}</div></div><div class="score">${j.score.toFixed(2)}%</div></div>`).join('');
+}
+function sortRanking(){jokes.sort((a,b)=>b.score-a.score);renderRanking();toast('排行榜已按虛構分數排序。')}
+function submitJoke(){
+ const text=$('newJoke').value.trim();
+ if(!text){toast('請先輸入一段廢話。');return}
+ if(jokes.length>=100){toast('排行榜已達 100 條上限。宇宙也需要空間。');return}
+ jokes.push({text,score:Math.max(50,Math.min(99.99,85+Math.random()*14.99))});
+ $('newJoke').value='';sortRanking();actions++;toast('提交成功。這段話毫無意義地上榜了。');
+}
+function instantJoke(){
+ $('instantJoke').textContent=phrases[Math.floor(Math.random()*phrases.length)];
+ actions++;
+}
+renderRanking();
 </script>
 </body>
 </html>
