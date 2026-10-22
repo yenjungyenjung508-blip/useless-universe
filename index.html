@@ -1,375 +1,371 @@
 
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090811">
-<title>USELESS™ — Nothing, Perfected.</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080811">
+<title>OMNISPHERE | Advanced Computational Research</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
-:root{--bg:#090811;--panel:#121120;--line:#ffffff15;--purple:#a78bfa;--cyan:#67e8f9;--muted:#9997b4;--green:#86efac;--red:#fda4af}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root{--bg:#080811;--panel:#10101c;--line:#ffffff12;--purple:#a78bfa;--cyan:#69e4ef;--muted:#8f8ba9;--green:#8be8bd;--mono:'IBM Plex Mono',monospace}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:#f8f7ff;font-family:Inter,"Noto Sans TC",sans-serif}
-body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 15% 0%,#6738a52a,transparent 40%),radial-gradient(ellipse at 95% 45%,#087e9b1b,transparent 35%)}
+body{margin:0;background:var(--bg);color:#eeecfb;font-family:Inter,'Noto Sans TC',sans-serif;font-size:13px}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 15% 0%,#51308330,transparent 38%),radial-gradient(ellipse at 90% 45%,#075c7620,transparent 40%)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.13;background-image:linear-gradient(#aaa2ff09 1px,transparent 1px),linear-gradient(90deg,#aaa2ff09 1px,transparent 1px);background-size:40px 40px}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
-nav{height:72px;position:sticky;top:0;z-index:10;background:#090811dc;backdrop-filter:blur(18px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%}
-.logo{font-weight:900;letter-spacing:2px;font-size:18px}.logo b{color:var(--purple)}
-.pill{font-size:10px;letter-spacing:1px;color:var(--green);border:1px solid #86efac35;border-radius:30px;padding:8px 11px}
-.layout{max-width:1250px;margin:auto;padding:28px 22px 70px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:25px}
-aside{position:sticky;top:96px;height:max-content;border:1px solid var(--line);background:#ffffff04;border-radius:18px;padding:15px}
-.nav-label,.label{font-size:10px;letter-spacing:2px;color:var(--muted);margin:8px 0 15px}
-.navbtn{display:flex;gap:11px;align-items:center;width:100%;text-align:left;color:#aaa8c2;background:transparent;border:1px solid transparent;padding:13px 12px;border-radius:11px;margin:4px 0;font-size:12px}
-.navbtn:hover,.navbtn.active{background:#a78bfa16;color:white;border-color:#a78bfa35}
-.navbtn span{font-size:17px;width:22px}
-.aside-foot{margin-top:22px;padding:13px;border-top:1px solid var(--line);font-size:10px;line-height:1.9;color:#77758e}
-main{min-width:0}
-.page{display:none;animation:appear .3s ease}.page.active{display:block}
-@keyframes appear{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
-.hero{padding:26px 0 30px}
-.eyebrow{color:var(--cyan);font-size:10px;letter-spacing:3px}
-h1{font-size:clamp(38px,6vw,68px);letter-spacing:-3px;line-height:1.05;margin:17px 0;background:linear-gradient(110deg,#fff,#b8a5ff 55%,#67e8f9);background-clip:text;color:transparent}
-h2{font-size:24px;letter-spacing:-.7px;margin:0 0 9px}
-h3{font-size:13px;margin:0 0 9px}
-p{font-size:12px;line-height:1.9;color:var(--muted)}
-.hero p{max-width:540px;font-size:13px}
+header{height:70px;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 4%;background:#090811e8;backdrop-filter:blur(22px);border-bottom:1px solid var(--line)}
+.brand{font-weight:800;font-size:16px;letter-spacing:3px}.brand span{color:var(--purple)}
+.brand-sub{font-size:9px;letter-spacing:1.5px;color:var(--muted);margin-top:4px}
+.header-right{display:flex;align-items:center;gap:17px}
+.online{font:10px var(--mono);color:var(--green)}.online:before{content:"";display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:8px;box-shadow:0 0 12px var(--green)}
+.clock{font:10px var(--mono);color:var(--muted)}
+.shell{max-width:1500px;margin:auto;display:grid;grid-template-columns:225px minmax(0,1fr);min-height:calc(100vh - 70px)}
+aside{padding:27px 15px;border-right:1px solid var(--line);background:#09081170}
+.nav-caption{font:9px var(--mono);letter-spacing:2px;color:#68647f;margin:10px 10px 13px}
+.nav{width:100%;display:flex;align-items:center;gap:12px;padding:13px 12px;margin:4px 0;border-radius:9px;border:1px solid transparent;background:transparent;color:#9995b4;text-align:left;font-size:11px}
+.nav .ico{font-size:17px;color:#8d80bc;width:19px;text-align:center}
+.nav.active,.nav:hover{background:#a78bfa13;border-color:#a78bfa28;color:#fff}
+.aside-bottom{margin-top:30px;border-top:1px solid var(--line);padding:18px 9px;color:#77728e;font:9px/2 var(--mono)}
+main{padding:32px clamp(16px,3vw,42px) 70px;min-width:0}
+.page{display:none;animation:fade .28s ease}.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.hero{padding:20px 0 32px}
+.eyebrow{font:10px var(--mono);letter-spacing:2px;color:var(--cyan)}
+h1{font-size:clamp(38px,5vw,68px);letter-spacing:-3px;line-height:1.06;margin:20px 0;background:linear-gradient(110deg,#fff 10%,#c1b2ff 52%,#6de8f0);background-clip:text;color:transparent}
+h2{font-size:22px;letter-spacing:-.5px;margin:0 0 9px}
+h3{font-size:12px;font-weight:600;margin:0 0 10px}
+p{color:var(--muted);font-size:11px;line-height:1.9}
+.hero p{max-width:620px;font-size:12px}
+.meta{font:9px var(--mono);color:#85809f;letter-spacing:.8px}
+.section-title{display:flex;align-items:center;gap:10px;margin:28px 0 14px;font:10px var(--mono);letter-spacing:1.6px;color:#a7a0c4}
+.section-title:after{content:"";height:1px;background:var(--line);flex:1}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
 .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-.card{min-width:0;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#19172aee,#10101bf2);padding:19px;box-shadow:0 12px 40px #0000000a}
-.card.wide{grid-column:span 2}
-.card.full{grid-column:1/-1}
-.stat{font-size:clamp(22px,3vw,31px);font-weight:800;letter-spacing:-1px;margin:14px 0 7px;overflow-wrap:anywhere}
-.stat small{font-size:11px;color:var(--cyan);letter-spacing:0}
+.card{min-width:0;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:13px;padding:19px;background:linear-gradient(145deg,#171526d9,#0e0e19ed);box-shadow:0 12px 35px #0000000a}
+.card:before{content:"";position:absolute;right:-65px;top:-85px;width:140px;height:140px;border-radius:50%;background:#a78bfa0a;filter:blur(12px);pointer-events:none}
+.card.wide{grid-column:span 2}.card.full{grid-column:1/-1}
+.card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}
+.stat-label{font:9px var(--mono);letter-spacing:.7px;color:#9691b1}
+.stat{font-size:clamp(22px,2.5vw,32px);letter-spacing:-1px;font-weight:700;margin:13px 0 5px;overflow-wrap:anywhere}
+.stat small{font:10px var(--mono);letter-spacing:0;color:var(--cyan)}
+.delta{font:10px var(--mono);color:var(--green)}
 .muted{color:var(--muted)}
-.tiny{font-size:10px;color:var(--muted);line-height:1.8}
-.btn{border:1px solid #ffffff20;border-radius:10px;background:#ffffff08;color:#f8f7ff;padding:11px 14px;font-size:11px;transition:.2s}
-.btn:hover{transform:translateY(-2px);border-color:var(--purple);box-shadow:0 5px 20px #a78bfa20}
-.btn.primary{background:linear-gradient(110deg,#8058dd,#526ce0);border:0;font-weight:700}
-.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
-.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
-.meter{height:4px;background:#ffffff10;border-radius:5px;overflow:hidden;margin-top:16px}
-.meter div{height:100%;background:linear-gradient(90deg,var(--purple),var(--cyan));transition:width .4s}
-.orbitbox{height:185px;display:grid;place-items:center}
-.orbit{width:135px;height:135px;border:1px solid #a78bfa80;border-radius:50%;position:relative;animation:spin 12s linear infinite}
-.orbit:before{content:"";position:absolute;inset:22px;border:1px solid #67e8f960;border-radius:50%}
-.planet{position:absolute;left:57px;top:-5px;width:12px;height:12px;background:var(--cyan);border-radius:50%;box-shadow:0 0 20px var(--cyan)}
-.core{position:absolute;inset:47px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#e9ddff,#9264f8 50%,#392263);box-shadow:0 0 45px #a78bfa80}
+.tag{font:9px var(--mono);padding:5px 7px;border:1px solid #a78bfa35;border-radius:4px;color:#bbaaff;white-space:nowrap}
+.tag.cyan{color:var(--cyan);border-color:#69e4ef35}
+.meter{height:3px;background:#ffffff10;margin-top:16px;border-radius:4px;overflow:hidden}
+.meter div{height:100%;background:linear-gradient(90deg,#8c65e9,#69e4ef);transition:width .4s}
+.btn{background:#ffffff05;border:1px solid #ffffff1a;color:#dcd8f0;padding:10px 13px;border-radius:7px;font-size:10px;transition:.2s}
+.btn:hover{border-color:#a78bfa80;background:#a78bfa12}
+.btn.primary{background:linear-gradient(110deg,#7553c7,#4b66bd);border-color:transparent;color:white}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.orbit-box{height:180px;display:grid;place-items:center;position:relative}
+.orbit{width:125px;height:125px;border:1px solid #a78bfa65;border-radius:50%;position:relative;animation:spin 14s linear infinite}
+.orbit:before{content:"";position:absolute;inset:20px;border:1px solid #69e4ef55;border-radius:50%;transform:rotateX(65deg)}
+.orbit:after{content:"";position:absolute;inset:-12px 18px;border:1px solid #a78bfa30;border-radius:50%;transform:rotate(58deg)}
+.core{position:absolute;inset:43px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#e4d8ff,#8e66ee 50%,#2a1b48);box-shadow:0 0 40px #9c77f677}
+.satellite{position:absolute;left:51px;top:-5px;width:10px;height:10px;background:var(--cyan);border-radius:50%;box-shadow:0 0 15px var(--cyan)}
 @keyframes spin{to{transform:rotate(360deg)}}
-.console{font:11px/2 monospace;background:#08080f;border:1px solid var(--line);padding:13px;border-radius:10px;min-height:110px;overflow-wrap:anywhere}
-.green{color:var(--green)}.purple{color:var(--purple)}.cyan{color:var(--cyan)}.red{color:var(--red)}
-.field{width:100%;padding:12px 13px;background:#090812;border:1px solid var(--line);border-radius:10px;color:white;outline:none;font-size:12px}
-.field:focus{border-color:var(--purple)}
-select.field option{background:#111}
-textarea.field{resize:vertical;min-height:85px}
-.chart{width:100%;height:180px;display:block}
+.formula{padding:17px;border:1px solid #a78bfa24;border-radius:9px;background:#090812;font:13px/2 var(--mono);color:#d4c7ff;overflow-wrap:anywhere}
+.formula .desc{font:10px/1.8 Inter,'Noto Sans TC',sans-serif;color:var(--muted);display:block;margin-top:8px}
+.console{background:#08080f;border:1px solid var(--line);padding:14px;border-radius:8px;font:10px/2 var(--mono);color:#9995b6;overflow-wrap:anywhere;min-height:115px}
+.logline{border-bottom:1px solid #ffffff08;padding:3px 0}
+.cyan-text{color:var(--cyan)}.purple-text{color:var(--purple)}.green-text{color:var(--green)}
+.field{width:100%;background:#090812;border:1px solid #ffffff1b;border-radius:7px;padding:12px;color:#f3efff;outline:none;font-size:11px}
+.field:focus{border-color:#a78bfa99}
+textarea.field{resize:vertical;min-height:90px}
+select.field option{background:#11101e}
+.chart{width:100%;height:185px;display:block}
 .tablewrap{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-size:11px;white-space:nowrap}
-th,td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line)}
-th{color:var(--muted);font-weight:500}
-td{color:#e8e5fa}
-.stockname{display:flex;align-items:center;gap:9px}
-.coin{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:#a78bfa18;color:var(--purple);font-weight:800}
-.badge{font-size:9px;border-radius:20px;padding:5px 7px;background:#86efac14;color:var(--green)}
-.badge.loss{background:#fda4af14;color:var(--red)}
-.console-line{border-bottom:1px solid #ffffff0a;padding:5px 0}
-.rankrow{display:grid;grid-template-columns:35px 1fr auto;align-items:center;gap:12px;padding:15px 0;border-bottom:1px solid var(--line)}
-.rankno{font-size:20px;font-weight:900;color:var(--purple)}
-.ranktext{font-size:12px;line-height:1.8;overflow-wrap:anywhere}
-.score{font-size:12px;color:var(--cyan);white-space:nowrap}
-footer{text-align:center;padding:25px;color:#77758e;font-size:10px;line-height:2;border-top:1px solid var(--line)}
-.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,15px);opacity:0;transition:.25s;z-index:30;background:#211d36;border:1px solid #a78bfa65;padding:12px 18px;border-radius:12px;font-size:11px;max-width:90%;text-align:center;pointer-events:none}
+table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:10px}
+th,td{padding:12px 9px;text-align:left;border-bottom:1px solid var(--line)}
+th{color:#85809f;font-weight:400;font-family:var(--mono);font-size:9px}
+td{color:#e1dcf4}
+.asset-icon{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#a78bfa17;color:var(--purple);margin-right:7px}
+.positive{color:var(--green)}.negative{color:var(--red)}
+.matrix{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px}
+.cell{aspect-ratio:1;display:grid;place-items:center;border-radius:3px;font:9px var(--mono);color:#eeeaff;border:1px solid #ffffff04;transition:background .4s}
+.rankrow{display:grid;grid-template-columns:32px minmax(0,1fr) 75px;gap:12px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}
+.rankno{font:20px var(--mono);color:var(--purple)}
+.ranktext{font-size:11px;line-height:1.8;overflow-wrap:anywhere}
+.rankscore{font:10px var(--mono);color:var(--cyan);text-align:right}
+footer{text-align:center;border-top:1px solid var(--line);padding:24px;color:#77718e;font:9px/2 var(--mono)}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,12px);opacity:0;transition:.25s;background:#201b34;border:1px solid #a78bfa55;border-radius:8px;padding:12px 17px;font-size:10px;z-index:50;max-width:90%;text-align:center;pointer-events:none}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:760px){.layout{grid-template-columns:1fr;padding:15px 13px 45px;gap:16px}aside{position:static;display:flex;gap:5px;overflow-x:auto;padding:8px}.nav-label,.aside-foot{display:none}.navbtn{white-space:nowrap;width:auto;flex:0 0 auto;padding:11px;font-size:10px}.navbtn span{width:auto}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:14px}.card.wide{grid-column:span 2}nav{padding:0 16px}.hero{padding-top:20px}}
-@media(max-width:390px){.grid,.grid.two{grid-template-columns:1fr}.card.wide,.card.full{grid-column:span 1}.rankrow{grid-template-columns:27px 1fr auto}}
+@media(max-width:850px){.shell{grid-template-columns:1fr}aside{position:sticky;top:70px;z-index:15;padding:8px;display:flex;overflow-x:auto;background:#090811ed;border-right:0;border-bottom:1px solid var(--line)}.nav-caption,.aside-bottom{display:none}.nav{white-space:nowrap;width:auto;flex:0 0 auto;padding:10px;font-size:10px}.nav .ico{width:auto}main{padding:22px 15px 50px}}
+@media(max-width:570px){.grid,.grid.two{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.card{padding:13px}.card.wide{grid-column:span 2}.card.full{grid-column:1/-1}h1{letter-spacing:-2px}.header-right{gap:8px}.clock{display:none}.brand-sub{font-size:8px}.stat{font-size:23px}.formula{font-size:11px}.rankrow{grid-template-columns:25px minmax(0,1fr) 60px;gap:8px}}
+@media(max-width:360px){.grid,.grid.two{grid-template-columns:1fr}.card.wide,.card.full{grid-column:span 1}}
 </style>
 </head>
 <body>
-<nav>
-  <div class="logo">USELESS<b>™</b></div>
-  <div class="pill">● NOTHING SYSTEMS ONLINE</div>
-</nav>
-
-<div class="layout">
+<header>
+ <div>
+  <div class="brand">OMNI<span>SPHERE</span></div>
+  <div class="brand-sub">ADVANCED COMPUTATIONAL RESEARCH DIVISION</div>
+ </div>
+ <div class="header-right"><span class="online">SYSTEM OPERATIONAL</span><span class="clock" id="clock">00:00:00 UTC</span></div>
+</header>
+<div class="shell">
 <aside>
-  <div class="nav-label">MAIN TERMINAL</div>
-  <button class="navbtn active" data-page="home"><span>◈</span> 總覽 Overview</button>
-  <button class="navbtn" data-page="exchange"><span>↗</span> 無用交易所</button>
-  <button class="navbtn" data-page="lab"><span>✳</span> 虛構 AI 實驗室</button>
-  <button class="navbtn" data-page="ranking"><span>☷</span> 宇宙廢話榜</button>
-  <div class="aside-foot">USELESS™ OS v3.0<br>所有指標均為虛構模擬。<br>NO PURPOSE. NO PROBLEM.</div>
+ <div class="nav-caption">RESEARCH NAVIGATION</div>
+ <button class="nav active" data-page="overview"><span class="ico">◈</span> 系統總覽</button>
+ <button class="nav" data-page="finance"><span class="ico">⌁</span> 量子金融動態</button>
+ <button class="nav" data-page="lab"><span class="ico">◎</span> 超維計算實驗室</button>
+ <button class="nav" data-page="atlas"><span class="ico">⌘</span> 宇宙參數圖譜</button>
+ <div class="aside-bottom">OMNISPHERE CORE v4.2.1<br>COMPUTATIONAL ENVIRONMENT<br>MODEL STATUS: SYNTHETIC<br>SESSION ENCRYPTION: LOCAL</div>
 </aside>
-
 <main>
+
 <!-- OVERVIEW -->
-<section class="page active" id="home">
-  <div class="hero">
-    <div class="eyebrow">THE WORLD'S LEADING NOTHING PLATFORM</div>
-    <h1>Nothing,<br>Perfected.</h1>
-    <p>以頂尖科技重新定義毫無意義。探索虛構市場、無用 AI 與宇宙級廢話。每一次操作，都讓世界保持原樣。</p>
-    <div class="actions">
-      <button class="btn primary" onclick="launch()">啟動無用模式 ↗</button>
-      <button class="btn" onclick="go('lab')">進入虛構實驗室</button>
-    </div>
-  </div>
-  <div class="label">01 / NOTHING ANALYTICS</div>
-  <div class="grid">
-    <article class="card"><div class="tiny">GLOBAL USELESSNESS INDEX</div><div class="stat" id="useless">99.97<small>%</small></div><p>宇宙級無用指數</p><div class="meter"><div style="width:99.97%"></div></div></article>
-    <article class="card"><div class="tiny">TIME INVESTED</div><div class="stat" id="timer">00:00:00</div><p>你在這裡度過的時間</p><div class="meter"><div id="timebar" style="width:2%"></div></div></article>
-    <article class="card"><div class="tiny">VIRTUAL COMPUTE</div><div class="stat" id="compute">0.00<small> ZF</small></div><p>虛構運算力單位</p><div class="meter"><div id="computebar" style="width:42%"></div></div></article>
-    <article class="card wide">
-      <div class="row"><div><div class="tiny">QUANTUM NOTHINGNESS</div><h3>量子虛無核心</h3></div><span class="badge">SIMULATED</span></div>
-      <div class="orbitbox"><div class="orbit"><div class="planet"></div><div class="core"></div></div></div>
-      <p>正在模擬不存在的事物。視覺效果很先進，實際上只是 CSS 動畫。</p>
-    </article>
-    <article class="card">
-      <div class="tiny">SYSTEM DIAGNOSTICS</div><h3 style="margin-top:12px">無用系統診斷</h3>
-      <div class="console" id="syslog"><div class="green">● SYSTEM ONLINE</div><div>> Loading nothing...</div><div>> Checking usefulness...</div><div class="purple">> Result: 0 useful things.</div></div>
-      <div class="actions"><button class="btn" onclick="scan()">執行掃描</button></div>
-    </article>
-  </div>
+<section class="page active" id="overview">
+ <div class="hero">
+  <div class="eyebrow">MULTIDIMENSIONAL SYSTEMS / RESEARCH PORTAL</div>
+  <h1>Beyond the<br>Observable.</h1>
+  <p>探索高維動態系統中的非線性演化、相位轉移與多尺度參數耦合。透過統一計算框架，建立跨維度狀態空間的視覺化觀測環境。</p>
+  <div class="actions"><button class="btn primary" onclick="navigate('lab')">進入計算環境 ↗</button><button class="btn" onclick="report()">生成系統分析</button></div>
+ </div>
+ <div class="section-title">01 / GLOBAL SYSTEM METRICS</div>
+ <div class="grid">
+  <article class="card"><div class="stat-label">DIMENSIONAL COMPLEXITY</div><div class="stat" id="complexity">12.8473</div><div class="delta">↗ 0.0342 / ITERATION</div><div class="meter"><div id="complexitybar" style="width:72%"></div></div></article>
+  <article class="card"><div class="stat-label">PHASE COHERENCE</div><div class="stat" id="coherence">99.982<small>%</small></div><div class="delta">STABILITY INDEX / NOMINAL</div><div class="meter"><div id="coherencebar" style="width:99%"></div></div></article>
+  <article class="card"><div class="stat-label">STATE VECTOR DENSITY</div><div class="stat" id="density">0.7826</div><div class="delta">MULTISCALE PARAMETER</div><div class="meter"><div id="densitybar" style="width:64%"></div></div></article>
+  <article class="card wide">
+   <div class="card-head"><div><div class="stat-label">FIG. 01 / SYSTEM TOPOLOGY</div><h3>多維狀態空間拓撲模型</h3></div><span class="tag">LIVE MODEL</span></div>
+   <div class="orbit-box"><div class="orbit"><div class="satellite"></div><div class="core"></div></div></div>
+   <p>基於參數化軌跡的抽象狀態空間展示。軌道僅用於介面視覺化，不代表已驗證的物理系統。</p>
+  </article>
+  <article class="card"><div class="stat-label">COMPUTATIONAL TELEMETRY</div><h3 style="margin-top:13px">系統診斷終端</h3><div class="console" id="syslog"><div class="green-text">● CORE INITIALIZED</div><div class="logline">> Loading state vector...</div><div class="logline">> Synchronizing parameters...</div><div class="cyan-text">> Observation layer ready.</div></div><div class="actions"><button class="btn" onclick="diagnostics()">執行診斷</button></div></article>
+  <article class="card full"><div class="card-head"><div><div class="stat-label">MATHEMATICAL FRAMEWORK / 01</div><h3>非線性狀態演化函數</h3></div><span class="tag cyan">MODEL A</span></div><div class="formula">x(t + Δt) = x(t) + αF(x,t)Δt + ε(t)<span class="desc">其中 α 為耦合係數，F 為假設性演化函數，ε 為隨機擾動項。此式為一般形式的示意模型，非特定物理定律。</span></div></article>
+ </div>
 </section>
 
-<!-- EXCHANGE -->
-<section class="page" id="exchange">
-  <div class="hero">
-    <div class="eyebrow">02 / VOID EXCHANGE</div>
-    <h1>Trade<br>Absolutely Nothing.</h1>
-    <p>全球首個毫無價值的虛構交易市場。使用虛擬資金交易不存在的資產，所有價格均為隨機模擬。</p>
-  </div>
-  <div class="grid">
-    <article class="card"><div class="tiny">VIRTUAL PORTFOLIO</div><div class="stat" id="cash">$10,000.00</div><p>虛擬現金餘額</p></article>
-    <article class="card"><div class="tiny">PORTFOLIO VALUE</div><div class="stat" id="portfolio">$10,000.00</div><p>現金與模擬持倉總值</p></article>
-    <article class="card"><div class="tiny">TOTAL P&L</div><div class="stat" id="pnl">$0.00</div><p>模擬損益，沒有真實金錢</p></article>
-    <article class="card full">
-      <div class="row"><div><div class="tiny">LIVE SIMULATED MARKET</div><h3>虛構市場行情</h3></div><span class="badge">● SIMULATION</span></div>
-      <div class="tablewrap"><table><thead><tr><th>資產</th><th>價格</th><th>變化</th><th>持有</th><th>操作</th></tr></thead><tbody id="stocks"></tbody></table></div>
-      <p class="tiny">價格定時隨機波動。買賣只改變本機頁面中的模擬資產，重新整理會重置。</p>
-    </article>
-    <article class="card full">
-      <div class="row"><div><div class="tiny">MARKET TELEMETRY</div><h3>虛構市場走勢</h3></div><span class="tiny" id="marketStatus">MARKET OPEN</span></div>
-      <canvas class="chart" id="chart"></canvas>
-    </article>
-  </div>
+<!-- FINANCE -->
+<section class="page" id="finance">
+ <div class="hero"><div class="eyebrow">MODULE 01 / QUANTUM FINANCIAL DYNAMICS</div><h1>Stochastic<br>Market Systems.</h1><p>以隨機過程、非線性收益映射與多因子狀態向量，觀測合成資產的動態價格演化。</p></div>
+ <div class="grid">
+  <article class="card"><div class="stat-label">AVAILABLE CAPITAL</div><div class="stat" id="cash">$10,000.00</div><p>模擬帳戶流動資本</p></article>
+  <article class="card"><div class="stat-label">NET ASSET VALUE</div><div class="stat" id="nav">$10,000.00</div><p>現金及合成資產估值</p></article>
+  <article class="card"><div class="stat-label">UNREALIZED + REALIZED P&L</div><div class="stat" id="pnl">$0.00</div><p>相對初始模擬資本的變化</p></article>
+  <article class="card full">
+   <div class="card-head"><div><div class="stat-label">SYNTHETIC ASSET UNIVERSE</div><h3>多因子資產矩陣</h3></div><span class="tag">SIMULATED</span></div>
+   <div class="tablewrap"><table><thead><tr><th>INSTRUMENT</th><th>價格</th><th>變化率</th><th>持倉</th><th>操作</th></tr></thead><tbody id="assets"></tbody></table></div>
+   <p>資產名稱與行情均為虛構資料。買入與賣出只改變本次瀏覽工作階段的模擬帳戶，不涉及真實貨幣或金融市場。</p>
+  </article>
+  <article class="card full"><div class="card-head"><div><div class="stat-label">TEMPORAL PRICE EVOLUTION</div><h3>價格狀態序列</h3></div><span class="tag cyan">4 SEC / STEP</span></div><canvas class="chart" id="financeChart"></canvas></article>
+  <article class="card full"><div class="stat-label">MATHEMATICAL FRAMEWORK / 02</div><h3 style="margin-top:10px">隨機價格演化模型</h3><div class="formula">P(t+Δt) = P(t) · exp[(μ − σ²/2)Δt + σ√Δt·Z]<span class="desc">此為幾何布朗運動常見形式的簡化表示。此網站不校準真實市場參數，實際行情由隨機數值生成。</span></div></article>
+ </div>
 </section>
 
-<!-- AI LAB -->
+<!-- LAB -->
 <section class="page" id="lab">
-  <div class="hero">
-    <div class="eyebrow">03 / NOTHING AI LAB</div>
-    <h1>Artificial<br>Pointlessness.</h1>
-    <p>進入宇宙級研究中心。輸入一個主題，我們的本機廢話引擎將產生聽起來極為專業、實際上毫無用途的研究報告。</p>
-  </div>
-  <div class="grid">
-    <article class="card"><div class="tiny">NEURAL NONSENSE</div><div class="stat" id="neurons">0</div><p>虛構神經元已啟動</p></article>
-    <article class="card"><div class="tiny">RESEARCH PROGRESS</div><div class="stat" id="progress">0<small>%</small></div><p>虛構研究進度</p><div class="meter"><div id="progressbar" style="width:0%"></div></div></article>
-    <article class="card"><div class="tiny">SCIENTIFIC VALUE</div><div class="stat">0.00<small>%</small></div><p>永遠保持穩定的科學價值</p></article>
-    <article class="card full">
-      <div class="tiny">RESEARCH PARAMETERS</div><h3 style="margin-top:10px">設定你的無用研究</h3>
-      <p>研究主題</p><input class="field" id="topic" maxlength="100" placeholder="例如：為什麼襪子總是少一隻？">
-      <p>研究模式</p><select class="field" id="mode"><option value="quantum">量子虛無理論</option><option value="cosmic">宇宙廢話學</option><option value="finance">無用經濟學</option><option value="future">未來的過去研究所</option></select>
-      <div class="actions"><button class="btn primary" id="researchBtn" onclick="research()">啟動研究程序 ✳</button><button class="btn" onclick="clearResearch()">清除結果</button></div>
-    </article>
-    <article class="card full"><div class="row"><h3>RESEARCH OUTPUT / 研究結果</h3><span class="badge">NOT PEER REVIEWED</span></div><div class="console" id="researchOutput"><span class="purple">[等待輸入]</span><br>研究尚未開始。請提交一個毫無意義的研究主題。</div><div class="actions"><button class="btn" onclick="copyText('researchOutput')">複製研究報告</button></div></article>
-  </div>
+ <div class="hero"><div class="eyebrow">MODULE 02 / HYPERDIMENSIONAL COMPUTATION</div><h1>Compute the<br>Unobservable.</h1><p>在參數化狀態空間中，探索高維映射、非線性迭代與多尺度系統的抽象行為。</p></div>
+ <div class="grid">
+  <article class="card"><div class="stat-label">ITERATION COUNT</div><div class="stat" id="iterations">000000</div><p>本次模擬迭代次數</p></article>
+  <article class="card"><div class="stat-label">CONVERGENCE INDEX</div><div class="stat" id="conv">0.0000</div><p>合成收斂指標</p></article>
+  <article class="card"><div class="stat-label">PARAMETER DIMENSION</div><div class="stat">12<small> D</small></div><p>介面設定的參數維度</p></article>
+  <article class="card full">
+   <div class="stat-label">EXPERIMENT CONFIGURATION</div><h3 style="margin-top:10px">研究參數設定</h3>
+   <p>狀態函數</p><select id="model" class="field"><option value="nonlinear">非線性耦合映射</option><option value="phase">相位轉移演化</option><option value="fractal">遞迴幾何映射</option><option value="cosmic">宇宙尺度參數模型</option></select>
+   <p>迭代規模</p><select id="scale" class="field"><option value="32">32 次迭代</option><option value="64" selected>64 次迭代</option><option value="128">128 次迭代</option><option value="256">256 次迭代</option></select>
+   <p>系統擾動係數：<strong id="alphaText">0.42</strong></p><input class="field" id="alpha" type="range" min="1" max="99" value="42" oninput="alphaText.textContent=(this.value/100).toFixed(2)">
+   <div class="actions"><button class="btn primary" id="runBtn" onclick="runSimulation()">啟動迭代程序 ↗</button><button class="btn" onclick="resetLab()">重置參數</button></div>
+  </article>
+  <article class="card wide"><div class="card-head"><div><div class="stat-label">STATE TRAJECTORY</div><h3>狀態向量演化軌跡</h3></div><span class="tag">LOCAL MODEL</span></div><canvas class="chart" id="labChart"></canvas></article>
+  <article class="card"><div class="stat-label">PARAMETER FIELD</div><h3 style="margin-top:10px">參數場取樣矩陣</h3><div id="matrix" class="matrix"></div><p>色階僅表示生成數值的相對差異。</p></article>
+  <article class="card full"><div class="card-head"><h3>計算結果與模型診斷</h3><span class="tag cyan">SESSION OUTPUT</span></div><div id="labOutput" class="console"><span class="purple-text">[READY]</span><br>請設定參數並啟動迭代程序。</div></article>
+ </div>
 </section>
 
-<!-- RANKING -->
-<section class="page" id="ranking">
-  <div class="hero">
-    <div class="eyebrow">04 / COSMIC NONSENSE LEADERBOARD</div>
-    <h1>The Art of<br>Saying Nothing.</h1>
-    <p>宇宙最盛大的廢話競賽。提交你的句子，獲得虛構分數，並與其他毫無意義的言論一較高下。</p>
-  </div>
-  <div class="grid">
-    <article class="card"><div class="tiny">NONSENSE ENTRIES</div><div class="stat" id="entryCount">7</div><p>排行榜句子總數</p></article>
-    <article class="card"><div class="tiny">AVERAGE USELESSNESS</div><div class="stat">99.99<small>%</small></div><p>虛構平均無用程度</p></article>
-    <article class="card"><div class="tiny">COSMIC RANK</div><div class="stat">#0</div><p>第零名，不存在的榮耀</p></article>
-    <article class="card full">
-      <div class="tiny">SUBMIT YOUR NONSENSE</div><h3 style="margin-top:10px">提交一段宇宙級廢話</h3>
-      <textarea class="field" id="newJoke" maxlength="180" placeholder="例如：當時間忘記了自己，時鐘便成為了圓形的昨天。"></textarea>
-      <div class="row" style="margin-top:12px"><span class="tiny">最多 180 字。分數完全隨機。</span><button class="btn primary" onclick="submitJoke()">提交排行榜 ↗</button></div>
-    </article>
-    <article class="card full">
-      <div class="row"><div><div class="tiny">GLOBAL NONSENSE INDEX</div><h3>宇宙廢話排行榜</h3></div><button class="btn" onclick="sortRanking()">重新排序 ↕</button></div>
-      <div id="rankingList"></div>
-      <p class="tiny">排行榜只存在於目前頁面工作階段，不會上傳至伺服器。</p>
-    </article>
-    <article class="card full">
-      <div class="tiny">INSTANT NONSENSE GENERATOR</div><h3 style="margin-top:10px">立即生成一句廢話</h3>
-      <div class="console" id="instantJoke">請點擊下方按鈕，探索無用的真諦。</div>
-      <div class="actions"><button class="btn primary" onclick="instantJoke()">生成一句 ✦</button><button class="btn" onclick="copyText('instantJoke')">複製句子</button></div>
-    </article>
-  </div>
+<!-- ATLAS -->
+<section class="page" id="atlas">
+ <div class="hero"><div class="eyebrow">MODULE 03 / COSMOLOGICAL PARAMETER ATLAS</div><h1>Mapping the<br>Unknown.</h1><p>建立抽象參數之間的關聯圖譜，以合成資料呈現多維變數的相對分布、命題結構與狀態關聯。</p></div>
+ <div class="grid">
+  <article class="card"><div class="stat-label">PARAMETER SPACE</div><div class="stat">12 × 12</div><p>合成關聯矩陣維度</p></article>
+  <article class="card"><div class="stat-label">SAMPLED VARIABLES</div><div class="stat" id="varCount">144</div><p>矩陣取樣單元</p></article>
+  <article class="card"><div class="stat-label">CORRELATION MEAN</div><div class="stat" id="corr">0.0000</div><p>合成關聯數值均值</p></article>
+  <article class="card full"><div class="card-head"><div><div class="stat-label">FIG. 03 / PARAMETER CORRELATION FIELD</div><h3>多維參數關聯熱圖</h3></div><button class="btn" onclick="newAtlas()">重新取樣</button></div><div id="atlasMatrix" class="matrix"></div><p>色彩代表合成參數的相對強度，不表示已經測量或驗證的自然現象。</p></article>
+  <article class="card full"><div class="stat-label">THEORETICAL PROPOSITION SYNTHESIZER</div><h3 style="margin-top:10px">理論命題合成器</h3><p>選擇一組參數，產生格式化的假設性命題與研究摘要。</p><select class="field" id="atlasMode"><option value="space">時空拓撲與幾何映射</option><option value="phase">相位轉移與狀態耦合</option><option value="entropy">熵增與資訊結構</option><option value="dimension">高維參數與非線性演化</option></select><div class="actions"><button class="btn primary" onclick="makeProposition()">合成理論命題 ↗</button><button class="btn" onclick="copyAtlas()">複製報告</button></div><div class="console" id="atlasOutput" style="margin-top:14px">[AWAITING PARAMETERS]<br>請選擇分析方向並執行命題合成。</div></article>
+ </div>
 </section>
 </main>
 </div>
-<footer>USELESS™ TECHNOLOGIES INTERNATIONAL<br>Making Nothing Since Absolutely Never.<br>所有行情、指標、AI 報告與評分均為虛構模擬。<br>© 2026 USELESS™ — NO PURPOSE. NO PROBLEM.</footer>
+<footer>OMNISPHERE RESEARCH SYSTEMS · COMPUTATIONAL INTERFACE v4.2.1<br>All generated metrics and models are synthetic demonstrations, not validated scientific findings.<br>© 2026 OMNISPHERE · LOCAL SIMULATION ENVIRONMENT</footer>
 <div class="toast" id="toast"></div>
 
 <script>
 const $=id=>document.getElementById(id);
-let seconds=0,actions=0,toastTimer;
+let toastTimer;
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2400)}
-function go(id){
+function navigate(id){
  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));
- document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));
+ document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b.dataset.page===id));
  window.scrollTo({top:0,behavior:'smooth'});
+ if(id==='finance')setTimeout(drawFinance,50);
+ if(id==='lab')setTimeout(drawLab,50);
 }
-document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
-function launch(){actions++;$('useless').innerHTML=(99.9+Math.random()*.1).toFixed(2)+'<small>%</small>';toast('無用模式已啟動。世界毫無變化。')}
-function scan(){
- actions++;
- $('syslog').innerHTML='<div class="green">● SCAN COMPLETE</div><div class="console-line">> Objects scanned: '+Math.floor(Math.random()*9999)+'</div><div class="console-line">> Useful objects found: 0</div><div class="purple">> Conclusion: Nothing changed.</div>';
- toast('掃描完成：沒有任何值得報告的發現。');
-}
-setInterval(()=>{
- seconds++;
- $('timer').textContent=[Math.floor(seconds/3600),Math.floor(seconds/60)%60,seconds%60].map(n=>String(n).padStart(2,'0')).join(':');
- $('timebar').style.width=Math.min(100,seconds/3)+'%';
- $('compute').innerHTML=(Math.random()*9.99).toFixed(2)+'<small> ZF</small>';
- $('computebar').style.width=Math.random()*100+'%';
-},1000);
-
-// FICTIONAL EXCHANGE
-const initialCash=10000;
-let cash=initialCash;
-const assets=[
- {name:'VOID',symbol:'虛無科技',price:128.40,prev:128.40,units:0},
- {name:'NULL',symbol:'空值能源',price:76.25,prev:76.25,units:0},
- {name:'ZERO',symbol:'零點集團',price:204.80,prev:204.80,units:0},
- {name:'404',symbol:'迷失資產',price:42.60,prev:42.60,units:0},
- {name:'DUST',symbol:'宇宙塵埃',price:9.99,prev:9.99,units:0}
-];
+document.querySelectorAll('.nav').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.page)));
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function money(n){return '$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
-function renderStocks(){
- $('stocks').innerHTML=assets.map((a,i)=>{
- let change=(a.price-a.prev)/a.prev*100;
- return `<tr><td><div class="stockname"><div class="coin">${a.name.slice(0,1)}</div><div><b>${a.name}</b><div class="tiny">${a.symbol}</div></div></div></td><td>${money(a.price)}</td><td><span class="badge ${change<0?'loss':''}">${change>=0?'+':''}${change.toFixed(2)}%</span></td><td>${a.units}</td><td><button class="btn" onclick="trade(${i},'buy')">買入</button> <button class="btn" onclick="trade(${i},'sell')" ${a.units<=0?'disabled':''}>賣出</button></td></tr>`;
- }).join('');
- updatePortfolio();
+function report(){diagnostics();toast('系統摘要已更新。')}
+function diagnostics(){
+ const c=$('syslog');
+ c.innerHTML='<div class="green-text">● DIAGNOSTIC COMPLETE</div>'+
+ '<div class="logline">> Runtime: browser session</div>'+
+ '<div class="logline">> Interface components: operational</div>'+
+ '<div class="logline">> Synthetic parameters: initialized</div>'+
+ '<div class="cyan-text">> No external scientific validation performed.</div>';
+ toast('系統診斷完成。');
 }
-function updatePortfolio(){
- let value=assets.reduce((s,a)=>s+a.price*a.units,0);
+function clock(){
+ const d=new Date();
+ $('clock').textContent=d.toLocaleTimeString('en-GB',{hour12:false})+' LOCAL';
+}
+clock();setInterval(clock,1000);
+setInterval(()=>{
+ $('complexity').textContent=(12.7+Math.random()*.3).toFixed(4);
+ $('coherence').innerHTML=(99.9+Math.random()*.099).toFixed(3)+'<small>%</small>';
+ $('density').textContent=(.65+Math.random()*.25).toFixed(4);
+ $('complexitybar').style.width=(60+Math.random()*35)+'%';
+ $('coherencebar').style.width=(95+Math.random()*5)+'%';
+ $('densitybar').style.width=(45+Math.random()*45)+'%';
+},2600);
+
+// FINANCE: SIMULATED ASSETS
+const initial=10000;
+let cash=initial;
+const assets=[
+ {ticker:'QNTM',name:'量子態研究',price:128.40,prev:128.40,units:0},
+ {ticker:'SPHX',name:'相位動力',price:76.25,prev:76.25,units:0},
+ {ticker:'VCTR',name:'向量系統',price:204.80,prev:204.80,units:0},
+ {ticker:'NOVA',name:'星際參數',price:42.60,prev:42.60,units:0},
+ {ticker:'ENTR',name:'熵場模型',price:91.30,prev:91.30,units:0}
+];
+let marketHistory=Array.from({length:50},(_,i)=>100+Math.sin(i/5)*8+Math.random()*5);
+function renderAssets(){
+ $('assets').innerHTML=assets.map((a,i)=>{
+  const change=(a.price-a.prev)/a.prev*100;
+  return `<tr><td><span class="asset-icon">${a.ticker[0]}</span><b>${a.ticker}</b><div class="meta">${a.name}</div></td><td>${money(a.price)}</td><td class="${change>=0?'positive':'negative'}">${change>=0?'+':''}${change.toFixed(2)}%</td><td>${a.units}</td><td><button class="btn" onclick="trade(${i},1)">買入</button> <button class="btn" onclick="trade(${i},-1)" ${a.units===0?'disabled':''}>賣出</button></td></tr>`;
+ }).join('');
+ updateAccount();
+}
+function updateAccount(){
+ const holdings=assets.reduce((s,a)=>s+a.price*a.units,0);
  $('cash').textContent=money(cash);
- $('portfolio').textContent=money(cash+value);
- $('pnl').textContent=money(cash+value-initialCash);
+ $('nav').textContent=money(cash+holdings);
+ $('pnl').textContent=money(cash+holdings-initial);
+ $('pnl').className='stat '+(cash+holdings>=initial?'positive':'negative');
 }
 function trade(i,side){
- const a=assets[i],qty=1;
- if(side==='buy'){
-  if(cash<a.price){toast('虛擬資金不足。你的財富也毫無意義。');return}
-  cash-=a.price;a.units+=qty;toast('已買入 1 單位虛構資產 '+a.name);
+ const a=assets[i];
+ if(side===1){
+  if(cash<a.price){toast('可用模擬資本不足。');return}
+  cash-=a.price;a.units++;
  }else{
-  if(a.units<qty)return;
-  cash+=a.price;a.units-=qty;toast('已賣出 1 單位虛構資產 '+a.name);
+  if(a.units<1)return;
+  cash+=a.price;a.units--;
  }
- actions++;renderStocks();drawChart();
+ renderAssets();toast('模擬交易已執行：'+a.ticker);
 }
-let history=Array.from({length:45},(_,i)=>100+Math.sin(i/4)*12+Math.random()*8);
-function drawChart(){
- const c=$('chart'),r=c.getBoundingClientRect(),dpr=window.devicePixelRatio||1;
- if(!r.width)return;
- c.width=r.width*dpr;c.height=180*dpr;
- const ctx=c.getContext('2d');ctx.scale(dpr,dpr);
- const w=r.width,h=180,pad=10,min=Math.min(...history)-5,max=Math.max(...history)+5;
- ctx.strokeStyle='#ffffff10';ctx.lineWidth=1;
- for(let i=0;i<5;i++){let y=pad+i*(h-2*pad)/4;ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}
- const pts=history.map((v,i)=>({x:i*w/(history.length-1),y:pad+(max-v)/(max-min)*(h-2*pad)}));
- const grad=ctx.createLinearGradient(0,0,0,h);grad.addColorStop(0,'#a78bfa55');grad.addColorStop(1,'#a78bfa00');
- ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.lineTo(w,h);ctx.lineTo(0,h);ctx.closePath();ctx.fillStyle=grad;ctx.fill();
- ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.strokeStyle='#b5a0ff';ctx.lineWidth=2;ctx.stroke();
+function chart(canvasId,data){
+ const c=$(canvasId),rect=c.getBoundingClientRect();
+ if(rect.width<1)return;
+ const ratio=window.devicePixelRatio||1,w=rect.width,h=185;
+ c.width=w*ratio;c.height=h*ratio;
+ const ctx=c.getContext('2d');ctx.scale(ratio,ratio);
+ const min=Math.min(...data)-2,max=Math.max(...data)+2;
+ ctx.strokeStyle='#ffffff12';ctx.lineWidth=1;
+ for(let i=0;i<5;i++){const y=10+i*(h-20)/4;ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}
+ const pts=data.map((v,i)=>({x:i*w/(data.length-1),y:10+(max-v)/(max-min)*(h-20)}));
+ const fill=ctx.createLinearGradient(0,0,0,h);fill.addColorStop(0,'#a78bfa48');fill.addColorStop(1,'#a78bfa00');
+ ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.lineTo(w,h);ctx.lineTo(0,h);ctx.closePath();ctx.fillStyle=fill;ctx.fill();
+ ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.strokeStyle='#a78bfa';ctx.lineWidth=1.8;ctx.stroke();
 }
+function drawFinance(){chart('financeChart',marketHistory)}
 function marketTick(){
- assets.forEach(a=>{a.prev=a.price;a.price=Math.max(.5,a.price*(1+(Math.random()-.49)*.035))});
- history.push(history[history.length-1]+(Math.random()-.48)*5);
- if(history.length>65)history.shift();
- renderStocks();drawChart();
+ assets.forEach(a=>{a.prev=a.price;a.price=Math.max(.5,a.price*(1+(Math.random()-.49)*.025))});
+ marketHistory.push(marketHistory.at(-1)+(Math.random()-.49)*3);
+ if(marketHistory.length>65)marketHistory.shift();
+ renderAssets();drawFinance();
 }
-renderStocks();
-window.addEventListener('resize',drawChart);
-setTimeout(drawChart,100);
-setInterval(marketTick,4000);
+renderAssets();setInterval(marketTick,4000);
 
-// LOCAL NONSENSE GENERATOR — NOT AN ONLINE AI
-const phrases=[
- '在無限的可能性中，毫無意義是最穩定的狀態。',
- '經過深度分析，我們發現一切正在成為一切。',
- '當宇宙停止思考，答案便開始問問題。',
- '根據不存在的數據，未來將持續保持未來的樣子。',
- '如果昨天是明天，那麼今天就是一個日期。',
- '我們使用了零個神經網路，得出百分之百沒用的結論。',
- '突破性發現：沒有發現任何突破性發現。',
- '時間不會等待任何人，除了正在等待時間的人。',
- '所有道路都通往某處，但某處不一定是目的地。',
- '當空白填滿空白，空白便失去了空白的意義。'
-];
-const modes={
- quantum:['量子虛無波函數','不存在的粒子場','超對稱空值模型'],
- cosmic:['宇宙廢話學','星際空談理論','無限空白假說'],
- finance:['零收益經濟模型','虛構資產流動性','無用市場均衡'],
- future:['時間反向觀測','未來的過去研究','昨日明日悖論']
-};
-function research(){
- const topic=$('topic').value.trim()||'宇宙為什麼如此沒有意義';
- const mode=$('mode').value,btn=$('researchBtn');
- btn.disabled=true;$('progress').innerHTML='0<small>%</small>';$('progressbar').style.width='0%';
- $('neurons').textContent='0';
- $('researchOutput').innerHTML='<span class="cyan">[INITIALIZING]</span><br>研究主題：'+escapeHTML(topic)+'<br>正在啟動本機廢話引擎……';
- let progress=0;
+// LAB: PARAMETERIZED SYNTHETIC ITERATION
+let labValues=Array.from({length:64},()=>.5+Math.random()*.2);
+function matrixCells(id,n=64){
+ $(id).innerHTML=Array.from({length:n},()=>{
+  const v=Math.random();
+  const r=Math.round(100+v*100),g=Math.round(70+v*60),b=Math.round(160+v*90);
+  return `<div class="cell" style="background:rgba(${r},${g},${b},${.13+v*.65})">${v.toFixed(2)}</div>`;
+ }).join('');
+}
+function drawLab(){chart('labChart',labValues)}
+matrixCells('matrix');
+function runSimulation(){
+ const btn=$('runBtn');btn.disabled=true;
+ const count=Number($('scale').value),alpha=Number($('alpha').value)/100,model=$('model').value;
+ let values=[.5],step=0;
+ $('labOutput').innerHTML='<span class="cyan-text">[INITIALIZING ITERATIVE MODEL]</span><br>Parameter field established.<br>Beginning synthetic numerical sequence...';
  const timer=setInterval(()=>{
-  progress+=20;
-  $('progress').innerHTML=progress+'<small>%</small>';$('progressbar').style.width=progress+'%';
-  $('neurons').textContent=(progress*1234).toLocaleString();
-  if(progress>=100){
-   clearInterval(timer);btn.disabled=false;actions++;
-   const phrase=phrases[Math.floor(Math.random()*phrases.length)];
-   const field=modes[mode][Math.floor(Math.random()*modes[mode].length)];
-   $('researchOutput').innerHTML='<span class="green">[SIMULATION COMPLETE]</span><br><br><b>研究主題：</b>'+escapeHTML(topic)+'<br><b>研究模型：</b>'+field+'<br><br><b>摘要</b><br>'+escapeHTML(phrase)+'針對「'+escapeHTML(topic)+'」的模擬分析顯示，該現象可能與不存在的因素具有高度相關性。<br><br><b>研究方法：</b>透過假設性觀察、虛構參數及不具實證效力的推論進行分析。<br><b>結果：</b>未獲得任何可驗證的發現。<br><b>信心指數：</b>0.00%<br><b>實際用途：</b>無。<br><br><span class="purple">DISCLAIMER: 本報告由本機預設文字組合生成，並非真正的 AI 分析或科學研究。</span>';
-   toast('研究完成。科學價值依然是零。');
+  for(let i=0;i<8&&step<count;i++,step++){
+   let x=values.at(-1),next;
+   if(model==='phase')next=Math.sin(x*3.8+alpha)*.5+.5;
+   else if(model==='fractal')next=4*x*(1-x)*(.7+alpha*.3);
+   else if(model==='cosmic')next=Math.sin(x*2.2+alpha)*.3+x*.6+.1;
+   else next=alpha*Math.sin(x*4)+(1-alpha)*x+.03*(Math.random()-.5);
+   values.push(Math.max(0,Math.min(1,next)));
   }
- },180);
+  $('iterations').textContent=String(step).padStart(6,'0');
+  $('conv').textContent=(Math.abs(values.at(-1)-values.at(-2))).toFixed(4);
+  chart('labChart',values);
+  if(step>=count){
+   clearInterval(timer);btn.disabled=false;labValues=values;
+   matrixCells('matrix');
+   const avg=values.reduce((a,b)=>a+b,0)/values.length;
+   $('labOutput').innerHTML='<span class="green-text">[ITERATION COMPLETE]</span><div class="logline">> Model: '+esc(model)+'</div><div class="logline">> Iterations: '+count+'</div><div class="logline">> Perturbation coefficient: '+alpha.toFixed(2)+'</div><div class="logline">> Sequence mean: '+avg.toFixed(5)+'</div><div class="logline">> Terminal state: '+values.at(-1).toFixed(5)+'</div><div class="logline">> Successive difference: '+Math.abs(values.at(-1)-values.at(-2)).toFixed(6)+'</div><br><span class="purple-text">INTERPRETATION</span><br>本次序列已依指定的合成映射完成迭代。數值特徵只反映所選公式與初始條件，不能直接推導為真實物理系統的結論。';
+   toast('數值迭代完成。');
+  }
+ },45);
 }
-function clearResearch(){
- $('researchOutput').textContent='研究尚未開始。請提交一個毫無意義的研究主題。';
- $('progress').innerHTML='0<small>%</small>';$('progressbar').style.width='0%';$('neurons').textContent='0';
-}
-function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function copyText(id){
- const text=$(id).innerText;
- if(navigator.clipboard&&location.protocol==='https:')navigator.clipboard.writeText(text).then(()=>toast('已複製到剪貼簿。')).catch(()=>toast(text));
- else toast(text);
+function resetLab(){
+ $('iterations').textContent='000000';$('conv').textContent='0.0000';
+ $('labOutput').textContent='[READY] 請設定參數並啟動迭代程序。';
+ labValues=Array.from({length:64},()=>.4+Math.random()*.3);
+ drawLab();matrixCells('matrix');toast('研究參數已重置。');
 }
 
-// LEADERBOARD
-let jokes=[
- {text:'宇宙的盡頭不是黑洞，而是還沒寫完的待辦清單。',score:99.98},
- {text:'當時間忘記了自己，時鐘便成為圓形的昨天。',score:99.96},
- {text:'水往低處流，因為它尚未訂閱高處服務。',score:99.94},
- {text:'如果沉默會說話，那麼它大概也會保持沉默。',score:99.92},
- {text:'我們不是迷失方向，只是方向尚未找到我們。',score:99.90},
- {text:'一個人的速度取決於他是否正在等待。',score:99.87},
- {text:'沒有消息就是好消息，除非你正在等消息。',score:99.82}
-];
-function renderRanking(){
- $('entryCount').textContent=jokes.length;
- $('rankingList').innerHTML=jokes.map((j,i)=>`<div class="rankrow"><div class="rankno">${String(i+1).padStart(2,'0')}</div><div class="ranktext">${escapeHTML(j.text)}<div class="tiny">COSMIC NONSENSE / ENTRY ${i+1}</div></div><div class="score">${j.score.toFixed(2)}%</div></div>`).join('');
+// ATLAS
+function newAtlas(){
+ const vals=Array.from({length:144},()=>Math.random());
+ $('atlasMatrix').innerHTML=vals.map(v=>{
+  const r=Math.round(80+v*90),g=Math.round(65+v*65),b=Math.round(130+v*120);
+  return `<div class="cell" style="background:rgba(${r},${g},${b},${.15+v*.7})" title="Synthetic coefficient: ${v.toFixed(4)}">${v.toFixed(2)}</div>`;
+ }).join('');
+ $('corr').textContent=(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(4);
+ $('varCount').textContent=vals.length;
 }
-function sortRanking(){jokes.sort((a,b)=>b.score-a.score);renderRanking();toast('排行榜已按虛構分數排序。')}
-function submitJoke(){
- const text=$('newJoke').value.trim();
- if(!text){toast('請先輸入一段廢話。');return}
- if(jokes.length>=100){toast('排行榜已達 100 條上限。宇宙也需要空間。');return}
- jokes.push({text,score:Math.max(50,Math.min(99.99,85+Math.random()*14.99))});
- $('newJoke').value='';sortRanking();actions++;toast('提交成功。這段話毫無意義地上榜了。');
+newAtlas();
+const propositions={
+ space:['時空拓撲與幾何映射','對抽象流形的局部參數進行映射，可建立幾何結構與狀態轉移之間的形式關係。','拓撲映射、邊界條件、局部座標系'],
+ phase:['相位轉移與狀態耦合','假設系統中的相位差受到多重參數共同調制，則其狀態分布可能呈現不同的合成模式。','相位差、耦合係數、狀態轉移矩陣'],
+ entropy:['熵增與資訊結構','在指定的機率分布下，可使用熵函數描述狀態不確定性，並比較不同合成分布的資訊特徵。','資訊熵、機率分布、狀態空間'],
+ dimension:['高維參數與非線性演化','在非線性映射框架中，參數變化可能改變數列的局部行為；其性質須依具體映射與條件判斷。','維度參數、迭代映射、局部穩定性']
+};
+function makeProposition(){
+ const [title,body,terms]=propositions[$('atlasMode').value];
+ const n=(Math.random()*0.9+.05).toFixed(4);
+ $('atlasOutput').innerHTML='<span class="cyan-text">[PROPOSITION GENERATED]</span><br><br><b>命題標題：</b>'+esc(title)+'<br><b>參數組：</b>'+esc(terms)+'<br><b>合成係數 λ：</b>'+n+'<br><br><b>理論摘要</b><br>'+esc(body)+'<br><br><b>形式化表示</b><br><span class="purple-text">Ψ(θ) = Σ λᵢ · fᵢ(θ) + ε</span><br><br><b>驗證狀態：</b>尚未經獨立驗證。<br><b>資料來源：</b>本機合成參數。<br><b>研究限制：</b>此命題為文字與公式示意，並非經實驗支持的科學發現。';
+ toast('理論命題已合成。');
 }
-function instantJoke(){
- $('instantJoke').textContent=phrases[Math.floor(Math.random()*phrases.length)];
- actions++;
+function copyAtlas(){
+ const text=$('atlasOutput').innerText;
+ if(navigator.clipboard&&location.protocol==='https:')navigator.clipboard.writeText(text).then(()=>toast('研究摘要已複製。')).catch(()=>toast('瀏覽器無法存取剪貼簿。'));
+ else toast('請選取研究摘要文字進行複製。');
 }
-renderRanking();
+window.addEventListener('resize',()=>{drawFinance();drawLab()});
+setTimeout(()=>{drawFinance();drawLab()},150);
 </script>
 </body>
 </html>
